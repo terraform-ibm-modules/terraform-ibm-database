@@ -11,7 +11,7 @@ data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
 module "ibm-redis" {
-  source                               = "../../modules/ibm-redis"
+  source                               = "terraform-ibm-modules/database/ibm//modules/ibm-redis"
   resource_group_id                    = data.ibm_resource_group.resource_group.id
   name                                 = var.name
   plan                                 = var.plan

@@ -10,10 +10,7 @@ This is a collection of modules that make it easier to provision database on IBM
 
 ## Compatibility
 
-This module is meant for use with Terraform 0.12. If you haven't
-[upgraded][terraform-0.12-upgrade] and need a Terraform 0.11.x-compatible
-version of this module, the last released version intended for Terraform 0.11.x
-is [1.1.1][v1.1.1].
+This module is meant for use with Terraform 0.12.
 
 ## Usage
 
@@ -26,7 +23,7 @@ data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
 module "ibm-rabbitmq" {
-  source                               = "../../modules/ibm-rabbitmq"
+  source                               = "terraform-ibm-modules/database/ibm//modules/ibm-rabbitmq"
   resource_group_id                    = data.ibm_resource_group.resource_group.id
   name                                 = var.name
   plan                                 = var.plan

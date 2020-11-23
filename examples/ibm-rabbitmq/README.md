@@ -11,7 +11,7 @@ data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
 module "ibm-rabbitmq" {
-  source                               = "../../modules/ibm-rabbitmq"
+  source                               = "terraform-ibm-modules/database/ibm//modules/ibm-rabbitmq"
   resource_group_id                    = data.ibm_resource_group.resource_group.id
   name                                 = var.name
   plan                                 = var.plan
