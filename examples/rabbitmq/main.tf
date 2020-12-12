@@ -1,24 +1,8 @@
-# IBM Database Terraform Module
+###########################################################
+# IBM Cloud `messages-for-rabbitmq` database provisioning
+# Copyright 2020 IBM
+###########################################################
 
-This is a collection of modules that make it easier to provision database on IBM Cloud Platform:
-* [database_elasticsearch](./modules/elasticsearch)
-* [database_etcd](./modules/etcd)
-* [database_mongo](./modules/mongo)
-* [database_postgresql](./modules/postgresql)
-* [database_rabbitmq](./modules/rabbitmq)
-* [database_redis](./modules/redis)
-
-## Compatibility
-
-This module is meant for use with Terraform 0.12.
-
-## Usage
-
-Full examples are in the [examples](./examples/) folder, but basic usage is as follows for creation of database:
-
-```hcl
-provider "ibm" {
-}
 data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
@@ -65,61 +49,3 @@ module "database_rabbitmq" {
   memory_rate_period_seconds           = var.memory_rate_period_seconds
   memory_rate_units                    = var.memory_rate_units
 }
-
-
-```
-#### NOTE: To make use of a particular version of module, Set the `version` argument to respective module version.
-
-## Requirements
-
-### Terraform plugins
-
-- [Terraform](https://www.terraform.io/downloads.html) 0.12
-- [terraform-provider-ibm](https://github.com/IBM-Cloud/terraform-provider-ibm) 
-
-## Install
-
-### Terraform
-
-Be sure you have the correct Terraform version (0.12), you can choose the binary here:
-- https://releases.hashicorp.com/terraform/
-
-### Terraform plugins
-
-Be sure you have the compiled plugins on $HOME/.terraform.d/plugins/
-
-- [terraform-provider-ibm](https://github.com/IBM-Cloud/terraform-provider-ibm) 
-
-## How to input varaible values through a file
-
-To review the plan for the configuration defined (no resources actually provisioned)
-
-`terraform plan -var-file=./input.tfvars`
-
-To execute and start building the configuration defined in the plan (provisions resources)
-
-`terraform apply -var-file=./input.tfvars`
-
-To destroy the Database resources
-
-`terraform destroy -var-file=./input.tfvars`
-
-All optional parameters by default will be set to null in respective example's varaible.tf file. If user wants to configure any optional paramter he has overwrite the default value.
-
-## Note
-
-All optional fields should be given value `null` in respective resource varaible.tf file. User can configure the same by overwriting with appropriate values.
-
-## References
-
-[IBM-Cloud Elastic Search Database docs](https://cloud.ibm.com/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started)
-
-[IBM-Cloud Etcd Database docs](https://cloud.ibm.com/docs/databases-for-etcd?topic=databases-for-etcd-getting-started)
-
-[IBM-Cloud Mongo Database docs](https://cloud.ibm.com/docs/databases-for-mongodb?topic=databases-for-mongodb-getting-started)
-
-[IBM-Cloud Postgresql Database docs](https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-getting-started)
-
-[IBM-Cloud Messages for Rabbitmq Database docs](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started)
-
-[IBM-Cloud Redis Database docs](https://cloud.ibm.com/docs/databases-for-redis?topic=databases-for-redis-getting-started)
