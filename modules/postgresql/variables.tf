@@ -7,7 +7,7 @@ variable "resource_group_id" {
   type        = string
   description = "Resource Group ID"
 }
-variable "name" {
+variable "service_name" {
   type        = string
   description = "Resource instance name for example, my Database instance"
 }
@@ -29,20 +29,20 @@ variable "database_version" {
   type        = string
   description = "The database version to provision if specified"
 }
-variable "members_memory_allocation_mb" {
+variable "memory_allocation" {
   default     = null
   type        = number
-  description = "Memory allocation required for cluster"
+  description = "Memory allocation required for database"
 }
-variable "members_disk_allocation_mb" {
+variable "disk_allocation" {
   default     = null
   type        = number
-  description = "Disk allocation required for cluster"
+  description = "Disk allocation required for database"
 }
-variable "members_cpu_allocation_count" {
+variable "cpu_allocation" {
   default     = null
   type        = number
-  description = "CPU allocation required for cluster"
+  description = "CPU allocation required for database"
 }
 variable "service_endpoints" {
   default     = null
@@ -59,17 +59,17 @@ variable "remote_leader_id" {
   type        = string
   description = "The CRN of leader database"
 }
-variable "key_protect_instance" {
+variable "kms_instance" {
   default     = null
   type        = string
   description = "The CRN of Key protect instance"
 }
-variable "key_protect_key" {
+variable "disk_encryption_key" {
   default     = null
   type        = string
   description = "The CRN of Key protect key"
 }
-variable "backup_encryption_key_crn" {
+variable "backup_encryption_key" {
   default     = null
   type        = string
   description = "The Backup Encryption Key CRN"

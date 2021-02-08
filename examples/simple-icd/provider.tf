@@ -1,5 +1,5 @@
 ###########################################################
-# IBM Cloud `messages-for-rabbitmq` database provisioning
+# IBM Cloud `databases-for-elasticsearch` database provisioning
 # Copyright 2020 IBM
 ###########################################################
 

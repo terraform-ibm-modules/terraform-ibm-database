@@ -13,20 +13,20 @@ data "ibm_resource_group" "resource_group" {
 module "database_elasticsearch" {
   source                               = "terraform-ibm-modules/database/ibm//modules/elasticsearch"
   resource_group_id                    = data.ibm_resource_group.resource_group.id
-  name                                 = var.name
+  service_name                         = var.service_name
   plan                                 = var.plan
   location                             = var.location
   adminpassword                        = var.adminpassword
   database_version                     = var.database_version
-  members_memory_allocation_mb         = var.members_memory_allocation_mb
-  members_disk_allocation_mb           = var.members_disk_allocation_mb
-  members_cpu_allocation_count         = var.members_cpu_allocation_count
+  memory_allocation         = var.memory_allocation
+  disk_allocation           = var.disk_allocation
+  cpu_allocation         = var.cpu_allocation
   service_endpoints                    = var.service_endpoints
   backup_id                            = var.backup_id
   remote_leader_id                     = var.remote_leader_id
-  key_protect_instance                 = var.key_protect_instance
-  key_protect_key                      = var.key_protect_key
-  backup_encryption_key_crn            = var.backup_encryption_key_crn
+  kms_instance                 = var.kms_instance
+  disk_encryption_key                      = var.disk_encryption_key
+  backup_encryption_key            = var.backup_encryption_key
   tags                                 = var.tags
   point_in_time_recovery_deployment_id = var.point_in_time_recovery_deployment_id
   point_in_time_recovery_time          = var.point_in_time_recovery_time
@@ -62,20 +62,20 @@ module "database_elasticsearch" {
 | Name                                  | Description                                                       | Type     | Default | Required |
 |---------------------------------------|-------------------------------------------------------------------|----------|---------|----------|
 | resource_group                        | Resource Group Name.                                              | string   | n/a     | yes      |
-| name                                  | Resource instance name for example, my Database instance.         | string   | n/a     | yes      |
+| service_name                          | Resource instance name for example, my Database instance.         | string   | n/a     | yes      |
 | plan                                  | The plan type of the Database instance.                           | string   | standard| yes      |
 | location                              | The location or the region in which Database instance exists.     | string   | n/a     | yes      |
 | adminpassword                         |  The admin user password for the instance.                        | string   | n/a     | no       |
 | database_version                      | The database version to provision if specified.                   | string   | n/a     | no       |
-| members_memory_allocation_mb          | Memory allocation required for cluster.                           | number   | n/a     | no       |
-| members_disk_allocation_mb            | Disk allocation required for cluster                              | number   | n/a     | no       |
-| members_cpu_allocation_count          | CPU allocation required for cluster.                              | number   | n/a     | no       |
+| memory_allocation          | Memory allocation required for database.                           | number   | n/a     | no       |
+| disk_allocation            | Disk allocation required for database                              | number   | n/a     | no       |
+| cpu_allocation          | CPU allocation required for database.                              | number   | n/a     | no       |
 | service_endpoints                     | Types of the service endpoints.                                   | string   | public  | no       | 
 | backup_id                             | The CRN of backup source database.                                | string   | n/a     | no       |
 | remote_leader_id                      | The CRN of leader database.                                       | string   | n/a     | no       |
-| key_protect_instance                  | The CRN of Key protect instance.                                  | string   | n/a     | no       |
-| key_protect_key                       | The CRN of Key protect key                                        | string   | n/a     | no       |
-| backup_encryption_key_crn             | backup_encryption_key_crn                                         | string   | n/a     | no       |
+| kms_instance                  | The CRN of Key protect instance.                                  | string   | n/a     | no       |
+| disk_encryption_key                       | The CRN of Key protect key                                        | string   | n/a     | no       |
+| backup_encryption_key             | backup_encryption_key                                         | string   | n/a     | no       |
 | tags                                  | Tags for the database                                             | set(str) | n/a     | no       |
 | point_in_time_recovery_deployment_id  |The CRN of source instance.                                        | string   | n/a     | no       |
 | point_in_time_recovery_time           | The point in time recovery time stamp of the deployed instance    | string   | n/a     | no       |

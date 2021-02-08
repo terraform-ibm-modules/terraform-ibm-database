@@ -1,5 +1,5 @@
 ###########################################################
-# IBM Cloud `databases-for-postgresql` database provisioning
+# IBM Cloud `databases-for-elasticsearch` database provisioning
 # Copyright 2020 IBM
 ###########################################################
 
