@@ -1,8 +1,8 @@
 ###########################################################
-# IBM Cloud `databases-for-mongodb` database provisioning
+# IBM Cloud simple database provisioning
 # Copyright 2020 IBM
 ###########################################################
 
-terraform {
-  required_version = ">= 0.12"
+output "simple-etcd" {
+    value =module.database_simple-etcd
 }

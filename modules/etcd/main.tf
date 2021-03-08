@@ -5,21 +5,21 @@
 
 resource "ibm_database" "etcd" {
   resource_group_id                    = var.resource_group_id
-  name                                 = var.name
+  name                                 = var.service_name
   service                              = "databases-for-etcd"
   plan                                 = var.plan
   location                             = var.location
   adminpassword                        = (var.adminpassword != null ? var.adminpassword : null)
   version                              = (var.database_version != null ? var.database_version : null)
-  members_memory_allocation_mb         = (var.members_memory_allocation_mb != null ? var.members_memory_allocation_mb : null)
-  members_disk_allocation_mb           = (var.members_disk_allocation_mb != null ? var.members_disk_allocation_mb : null)
-  members_cpu_allocation_count         = (var.members_cpu_allocation_count != null ? var.members_cpu_allocation_count : null)
+  members_memory_allocation_mb         = (var.memory_allocation != null ? var.memory_allocation : null)
+  members_disk_allocation_mb           = (var.disk_allocation != null ? var.disk_allocation : null)
+  members_cpu_allocation_count         = (var.cpu_allocation != null ? var.cpu_allocation : null)
   service_endpoints                    = (var.service_endpoints != null ? var.service_endpoints : "public")
   backup_id                            = (var.backup_id != null ? var.backup_id : null)
   remote_leader_id                     = (var.remote_leader_id != null ? var.remote_leader_id : null)
-  key_protect_instance                 = (var.key_protect_instance != null ? var.key_protect_instance : null)
-  key_protect_key                      = (var.key_protect_key != null ? var.key_protect_key : null)
-  backup_encryption_key_crn            = (var.backup_encryption_key_crn != null ? var.backup_encryption_key_crn : null)
+  key_protect_instance                 = (var.kms_instance != null ? var.kms_instance : null)
+  key_protect_key                      = (var.disk_encryption_key != null ? var.disk_encryption_key : null)
+  backup_encryption_key_crn            = (var.backup_encryption_key != null ? var.backup_encryption_key : null)
   tags                                 = (var.tags != null ? var.tags : [])
   point_in_time_recovery_deployment_id = (var.point_in_time_recovery_deployment_id != null ? var.point_in_time_recovery_deployment_id : null)
   point_in_time_recovery_time          = (var.point_in_time_recovery_time != null ? var.point_in_time_recovery_time : null)
