@@ -8,7 +8,7 @@ This is a collection of modules that make it easier to provision database on IBM
 * [database_rabbitmq](./modules/rabbitmq)
 * [database_redis](./modules/redis)
 
-## Compatibility
+## Compatibility 
 
 This module is meant for use with Terraform 0.12.
 
