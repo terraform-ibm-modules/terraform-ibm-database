@@ -9,20 +9,20 @@ data "ibm_resource_group" "resource_group" {
 module "database_postgresql" {
   source                               = "terraform-ibm-modules/database/ibm//modules/postgresql"
   resource_group_id                    = data.ibm_resource_group.resource_group.id
-  name                                 = var.name
+  service_name                         = var.name
   plan                                 = var.plan
   location                             = var.location
   adminpassword                        = var.adminpassword
   database_version                     = var.database_version
-  members_memory_allocation_mb         = var.members_memory_allocation_mb
-  members_disk_allocation_mb           = var.members_disk_allocation_mb
-  members_cpu_allocation_count         = var.members_cpu_allocation_count
+  memory_allocation                    = var.memory_allocation
+  disk_allocation                      = var.disk_allocation
+  cpu_allocation                       = var.cpu_allocation
   service_endpoints                    = var.service_endpoints
   backup_id                            = var.backup_id
   remote_leader_id                     = var.remote_leader_id
-  key_protect_instance                 = var.key_protect_instance
-  key_protect_key                      = var.key_protect_key
-  backup_encryption_key_crn            = var.backup_encryption_key_crn
+  kms_instance                         = var.kms_instance
+  disk_encryption_key                  = var.disk_encryption_key
+  backup_encryption_key                = var.backup_encryption_key
   tags                                 = var.tags
   point_in_time_recovery_deployment_id = var.point_in_time_recovery_deployment_id
   point_in_time_recovery_time          = var.point_in_time_recovery_time

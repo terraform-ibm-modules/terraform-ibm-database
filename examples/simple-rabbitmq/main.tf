@@ -7,7 +7,7 @@ data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
 module "database_simple-rabbitmq" {
-  source            = "../../modules/rabbitmq"
+  source            = "terraform-ibm-modules/database/ibm//modules/rabbitmq"
   location          = var.location
   plan              = "standard"
   service_name      = var.service_name

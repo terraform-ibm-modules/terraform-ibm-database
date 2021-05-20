@@ -4,5 +4,5 @@
 ###########################################################
 
 output "simple-mongo" {
-    value =module.database_simple-mongo
+  value = module.database_simple-mongo
 }

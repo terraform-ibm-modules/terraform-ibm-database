@@ -10,7 +10,7 @@ This is a collection of modules that make it easier to provision database on IBM
 
 ## Compatibility
 
-This module is meant for use with Terraform 0.12.
+This module is meant for use with Terraform >= 0.13.
 
 ## Usage
 
@@ -30,15 +30,15 @@ module "database_rabbitmq" {
   location                             = var.location
   adminpassword                        = var.adminpassword
   database_version                     = var.database_version
-  members_memory_allocation_mb         = var.members_memory_allocation_mb
-  members_disk_allocation_mb           = var.members_disk_allocation_mb
-  members_cpu_allocation_count         = var.members_cpu_allocation_count
+  memory_allocation                    = var.memory_allocation
+  disk_allocation                      = var.disk_allocation
+  cpu_allocation                       = var.cpu_allocation
   service_endpoints                    = var.service_endpoints
   backup_id                            = var.backup_id
   remote_leader_id                     = var.remote_leader_id
-  key_protect_instance                 = var.key_protect_instance
-  key_protect_key                      = var.key_protect_key
-  backup_encryption_key_crn            = var.backup_encryption_key_crn
+  kms_instance                         = var.kms_instance
+  disk_encryption_key                  = var.disk_encryption_key
+  backup_encryption_key                = var.backup_encryption_key
   tags                                 = var.tags
   point_in_time_recovery_deployment_id = var.point_in_time_recovery_deployment_id
   point_in_time_recovery_time          = var.point_in_time_recovery_time
@@ -74,21 +74,21 @@ module "database_rabbitmq" {
 
 ### Terraform plugins
 
-- [Terraform](https://www.terraform.io/downloads.html) 0.12
-- [terraform-provider-ibm](https://github.com/IBM-Cloud/terraform-provider-ibm) 
+- [Terraform](https://www.terraform.io/downloads.html) >= 0.13
+- [terraform-provider-ibm](https://github.com/IBM-Cloud/terraform-provider-ibm)
 
 ## Install
 
 ### Terraform
 
-Be sure you have the correct Terraform version (0.12), you can choose the binary here:
+Be sure you have the correct Terraform version (>= 0.13), you can choose the binary here:
 - https://releases.hashicorp.com/terraform/
 
 ### Terraform plugins
 
 Be sure you have the compiled plugins on $HOME/.terraform.d/plugins/
 
-- [terraform-provider-ibm](https://github.com/IBM-Cloud/terraform-provider-ibm) 
+- [terraform-provider-ibm](https://github.com/IBM-Cloud/terraform-provider-ibm)
 
 ## How to input varaible values through a file
 
@@ -110,6 +110,15 @@ All optional parameters by default will be set to null in respective example's v
 
 All optional fields should be given value `null` in respective resource varaible.tf file. User can configure the same by overwriting with appropriate values.
 
+### Pre-commit Hooks
+
+Run the following command to execute the pre-commit hooks defined in `.pre-commit-config.yaml` file
+
+  `pre-commit run -a`
+
+We can install pre-coomit tool using
+
+  `pip install pre-commit`
 ## References
 
 [IBM-Cloud Elastic Search Database docs](https://cloud.ibm.com/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started)

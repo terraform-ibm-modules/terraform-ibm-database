@@ -4,5 +4,5 @@
 ###########################################################
 
 output "simple-rabbitmq" {
-    value =module.database_simple-rabbitmq
+  value = module.database_simple-rabbitmq
 }
