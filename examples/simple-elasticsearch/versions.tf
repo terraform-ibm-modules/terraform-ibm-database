@@ -1,5 +1,5 @@
 ########################
-# IBM Cloud database 
+# IBM Cloud database
 # Copyright 2020 IBM
 ########################
 

@@ -36,7 +36,7 @@ module "database_simple-icd" {
 | memory_allocation                     | Memory allocation required for database.                          | number   | n/a     | no       |
 | disk_allocation                       | Disk allocation required for database                             | number   | n/a     | no       |
 | cpu_allocation                        | CPU allocation required for database.                             | number   | n/a     | no       |
-| service_endpoints                     | Types of the service endpoints.                                   | string   | public  | no       | 
+| service_endpoints                     | Types of the service endpoints.                                   | string   | public  | no       |
 | backup_id                             | The CRN of backup source database.                                | string   | n/a     | no       |
 | remote_leader_id                      | The CRN of leader database.                                       | string   | n/a     | no       |
 | kms_instance                          | The CRN of Key protect instance.                                  | string   | n/a     | no       |

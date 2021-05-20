@@ -4,5 +4,5 @@
 ###########################################################
 
 output "simple-etcd" {
-    value =module.database_simple-etcd
+  value = module.database_simple-etcd
 }
