@@ -26,7 +26,7 @@ func TestAccIBMDatabaseInstance(t *testing.T) {
 	// terraform testing.
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		// The path to where our Terraform code is located
-		TerraformDir: "../examples/simple-elasticsearch",
+		TerraformDir: "../examples/simple-redis",
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
