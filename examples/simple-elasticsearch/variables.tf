@@ -3,10 +3,6 @@
 # Copyright 2020 IBM
 ###########################################################
 
-variable "ibmcloud_api_key" {
-  type        = string
-  description = "IBM-Cloud API Key"
-}
 variable "resource_group" {
   type        = string
   description = "Resource Group Name"
