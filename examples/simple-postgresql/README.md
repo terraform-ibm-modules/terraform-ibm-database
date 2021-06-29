@@ -8,7 +8,7 @@ data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
 module "database_simple-postgresql" {
-  source            = "terraform-ibm-modules/database/ibm//modules/postgresql"
+  source            = "../../modules/postgresql"
   location          = var.location
   plan              = var.plan
   service_name      = var.service_name

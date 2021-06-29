@@ -8,7 +8,7 @@ data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
 module "database_simple-icd" {
-  source            = "terraform-ibm-modules/database/ibm//modules/redis"
+  source            = "../../modules/redis"
   location          = var.location
   plan              = var.plan
   service_name      = var.service_name
