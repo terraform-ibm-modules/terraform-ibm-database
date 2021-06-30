@@ -1,12 +1,12 @@
 # IBM Database Terraform Module
 
 This is a collection of modules that make it easier to provision database on IBM Cloud Platform:
-* [database_elasticsearch](./modules/elasticsearch)
-* [database_etcd](./modules/etcd)
-* [database_mongo](./modules/mongo)
-* [database_postgresql](./modules/postgresql)
-* [database_rabbitmq](./modules/rabbitmq)
-* [database_redis](./modules/redis)
+* database_elasticsearch
+* database_etcd
+* database_mongo
+* database_postgresql
+* database_rabbitmq
+* database_redis
 
 ## Compatibility
 
