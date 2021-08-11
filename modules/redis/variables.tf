@@ -176,7 +176,7 @@ variable "memory_io_enabled" {
 }
 variable "memory_io_over_period" {
   default     = null
-  type        = number
+  type        = string
   description = "Auto Scaling Memory Scalar: IO Utilization Over Period"
 }
 variable "memory_rate_increase_percent" {
