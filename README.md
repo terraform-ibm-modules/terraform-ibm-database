@@ -7,6 +7,7 @@ This is a collection of modules that make it easier to provision database on IBM
 * database_postgresql
 * database_rabbitmq
 * database_redis
+* service-credentials
 
 ## Compatibility
 
