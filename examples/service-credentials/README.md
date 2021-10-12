@@ -23,6 +23,9 @@ module "db-service-credentials" {
 | Name                 | Description                                       | Type     | Default | Required |
 |----------------------|---------------------------------------------------|----------|---------|----------|
 | db_name              | Existing db Name.                                 | string   | n/a     | yes      |
+| ibm_region           | Provider level region.                            | string   | n/a     | no       |
+| resource_group       | Name of the resource group                        | string   | n/a     | no       |
+| location             | Location to which DB instance belongs to          | string   | n/a     | no       |
 | key_name             | Name of key to be created.                        | string   | n/a     | yes      |
 | key_role             | Name of the user role                             | string   | n/a     | yes      |
 
