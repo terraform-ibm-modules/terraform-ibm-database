@@ -23,6 +23,8 @@ module "db-service-credentials" {
 | Name                 | Description                                       | Type     | Default | Required |
 |----------------------|---------------------------------------------------|----------|---------|----------|
 | db_name              | Existing db Name.                                 | string   | n/a     | yes      |
+| resource_group_id    | ID of the resource group                          | string   | n/a     | no       |
+| location             | Location to which DB instance belongs to          | string   | n/a     | no       |
 | key_name             | Name of key to be created.                        | string   | n/a     | yes      |
 | key_role             | name of the user role                             | string   | n/a     | yes      |
 
