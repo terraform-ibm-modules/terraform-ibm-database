@@ -3,5 +3,6 @@
 # Copyright 2020 IBM
 ###########################################################
 output "etcd" {
-  value = ibm_database.etcd
+  description = "simple etcd"
+  value       = ibm_database.etcd
 }

@@ -6,7 +6,7 @@
 data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
-module "database_simple-rabbitmq" {
+module "database_simple_rabbitmq" {
   source            = "../../modules/rabbitmq"
   location          = var.location
   plan              = "standard"

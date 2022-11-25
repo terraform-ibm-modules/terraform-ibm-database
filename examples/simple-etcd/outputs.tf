@@ -3,6 +3,7 @@
 # Copyright 2020 IBM
 ###########################################################
 
-output "simple-etcd" {
-  value = module.database_simple-etcd
+output "simple_etcd" {
+  description = "simple etcd"
+  value       = module.database_simple_etcd
 }

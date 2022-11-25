@@ -3,5 +3,7 @@
 # Copyright 2020 IBM
 ###########################################################
 output "redis" {
-  value = ibm_database.redis
+  description = "simple redis"
+  value       = ibm_database.redis
+  sensitive   = true
 }

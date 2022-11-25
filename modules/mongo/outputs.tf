@@ -3,5 +3,6 @@
 # Copyright 2020 IBM
 ###########################################################
 output "mongodb" {
-  value = ibm_database.mongodb
+  description = "simple mongodb"
+  value       = ibm_database.mongodb
 }

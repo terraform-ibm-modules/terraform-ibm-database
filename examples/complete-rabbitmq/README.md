@@ -1,6 +1,6 @@
-# Module database_rabbitmq
+# Module database_postgresql
 
-This example is used to provision  messages for Rabbitmq  Database on IBM Cloud Infrastructure.
+This example is used to provision databases for rabbitmq database on IBM Cloud Infrastructure.
 
 ## Example Usage
 ```
@@ -10,7 +10,7 @@ provider "ibm" {
 data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
-module "database_rabbitmq" {
+module "database_postgresql" {
   source                               = "../../modules/rabbitmq"
   resource_group_id                    = data.ibm_resource_group.resource_group.id
   name                                 = var.name
@@ -55,72 +55,95 @@ module "database_rabbitmq" {
 }
 
 ```
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_ibm"></a> [ibm](#requirement\_ibm) | 1.41.1 |
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [ibm_resource_group.resource_group](https://registry.terraform.io/providers/IBM-Cloud/ibm/1.41.1/docs/data-sources/resource_group) | data source |
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_database_rabbitmq"></a> [database\_rabbitmq](#module\_database\_rabbitmq) | ../../modules/rabbitmq | n/a |
+
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_ibm"></a> [ibm](#requirement\_ibm) | 1.41.1 |
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_database_rabbitmq"></a> [database\_rabbitmq](#module\_database\_rabbitmq) | ../../modules/rabbitmq | n/a |
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [ibm_resource_group.resource_group](https://registry.terraform.io/providers/IBM-Cloud/ibm/1.41.1/docs/data-sources/resource_group) | data source |
+
 ## Inputs
 
-| Name                                  | Description                                                       | Type     | Default | Required |
-|---------------------------------------|-------------------------------------------------------------------|----------|---------|----------|
-| resource_group                        | Resource Group Name.                                              | string   | n/a     | yes      |
-| name                                  | Resource instance name for example, my Database instance.         | string   | n/a     | yes      |
-| plan                                  | The plan type of the Database instance.                           | string   | standard| yes      |
-| location                              | The location or the region in which Database instance exists.     | string   | n/a     | yes      |
-| adminpassword                         |  The admin user password for the instance.                        | string   | n/a     | no       |
-| database_version                      | The database version to provision if specified.                   | string   | n/a     | no       |
-| memory_allocation          | Memory allocation required for cluster.                           | number   | n/a     | no       |
-| disk_allocation            | Disk allocation required for cluster                              | number   | n/a     | no       |
-| cpu_allocation          | CPU allocation required for cluster.                              | number   | n/a     | no       |
-| service_endpoints                     | Types of the service endpoints.                                   | string   | public  | no       |
-| backup_id                             | The CRN of backup source database.                                | string   | n/a     | no       |
-| remote_leader_id                      | The CRN of leader database.                                       | string   | n/a     | no       |
-| kms_instance                  | The CRN of Key protect instance.                                  | string   | n/a     | no       |
-| disk_encryption_key                       | The CRN of Key protect key                                        | string   | n/a     | no       |
-| backup_encryption_key             | backup_encryption_key                                         | string   | n/a     | no       |
-| tags                                  | Tags for the database                                             | set(str) | n/a     | no       |
-| point_in_time_recovery_deployment_id  |The CRN of source instance.                                        | string   | n/a     | no       |
-| point_in_time_recovery_time           | The point in time recovery time stamp of the deployed instance    | string   | n/a     | no       |
-| users                                 | Database Users. It is set of username and passwords               | set(obj) | n/a     | no       |
-| whitelist                             | Database Whitelist It is set of IP Address and description.       | set(obj) | n/a     | no       |
-| cpu_rate_increase_percent             | Auto Scaling CPU Rate: Increase Percent                           | number   | n/a     | no       |
-| cpu_rate_limit_count_per_member       | Auto Scaling CPU Rate: Limit count per number.                    | number   | n/a     | no       |
-| cpu_rate_period_seconds               | Auto Scaling CPU Rate: Period Seconds                             | number   | n/a     | no       |
-| cpu_rate_units                        | Auto Scaling CPU Rate: Units.                                     | string   | n/a     | no       |
-| disk_capacity_enabled                 | Auto Scaling Disk Scalar: Capacity Enabled.                       | bool     | n/a     | no       |
-| disk_free_space_less_than_percent     | Auto Scaling Disk Scalar: Capacity Free Space Less Than Percent   | number   | n/a     | no       |
-| disk_io_above_percent                 | Auto Scaling Disk Scalar: IO Utilization Above Percent.           | number   | n/a     | no       |
-| disk_io_enabled                       | Auto Scaling Disk Scalar: IO Utilization Enabled.                 | bool     | n/a     | no       |
-| disk_io_over_period                   | Auto Scaling Disk Scalar: IO Utilization Over Period              | string   | n/a     | no       |
-| disk_rate_increase_percent            | Auto Scaling Disk Rate: Increase Percent                          | number   | n/a     | no       |
-| disk_rate_limit_mb_per_member         | Auto Scaling Disk Rate: Limit mb per member                       | number   | n/a     | no       |
-| disk_rate_period_seconds              | Auto Scaling Disk Rate: Period Seconds                            | number   | n/a     | no       |
-| disk_rate_units                       | Auto Scaling Disk Disk: Units.                                    | string   | n/a     | no       |
-| memory_io_above_percent               | Auto Scaling Memory Scalar: IO Utilization Above Percent.         | number   | n/a     | no       |
-| memory_io_enabled                     | Auto Scaling Memory Scalar: IO Utilization Enabled.               | bool     | n/a     | no       |
-| memory_io_over_period                 | Auto Scaling Memory Scalar: IO Utilization Over Period            | string   | n/a     | no       |
-| memory_rate_increase_percent          | Auto Scaling Memory Rate: Increase Percent                        | number   | n/a     | no       |
-| memory_rate_limit_mb_per_member       | Auto Scaling Memory Rate: Limit mb per member                     | number   | n/a     | no       |
-| memory_rate_period_seconds            | Auto Scaling Memory Rate: Period Seconds.                         | number   | n/a     | no       |
-| memory_rate_units                     | Auto Scaling Memory Rate: Units.                                  | string   | n/a     | no       |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_adminpassword"></a> [adminpassword](#input\_adminpassword) | The admin user password for the instance | `string` | `null` | no |
+| <a name="input_backup_encryption_key"></a> [backup\_encryption\_key](#input\_backup\_encryption\_key) | The Backup Encryption Key CRN | `string` | `null` | no |
+| <a name="input_backup_id"></a> [backup\_id](#input\_backup\_id) | The CRN of backup source database | `string` | `null` | no |
+| <a name="input_cpu_allocation"></a> [cpu\_allocation](#input\_cpu\_allocation) | CPU allocation required for cluster | `number` | `null` | no |
+| <a name="input_cpu_rate_increase_percent"></a> [cpu\_rate\_increase\_percent](#input\_cpu\_rate\_increase\_percent) | Auto Scaling CPU Rate: Increase Percent | `number` | `null` | no |
+| <a name="input_cpu_rate_limit_count_per_member"></a> [cpu\_rate\_limit\_count\_per\_member](#input\_cpu\_rate\_limit\_count\_per\_member) | Auto Scaling CPU Rate: Limit count per number | `number` | `null` | no |
+| <a name="input_cpu_rate_period_seconds"></a> [cpu\_rate\_period\_seconds](#input\_cpu\_rate\_period\_seconds) | Auto Scaling CPU Rate: Period Seconds | `number` | `null` | no |
+| <a name="input_cpu_rate_units"></a> [cpu\_rate\_units](#input\_cpu\_rate\_units) | Auto Scaling CPU Rate: Units | `string` | `null` | no |
+| <a name="input_database_version"></a> [database\_version](#input\_database\_version) | The database version to provision if specified | `string` | `null` | no |
+| <a name="input_disk_allocation"></a> [disk\_allocation](#input\_disk\_allocation) | Disk allocation required for cluster | `number` | `null` | no |
+| <a name="input_disk_capacity_enabled"></a> [disk\_capacity\_enabled](#input\_disk\_capacity\_enabled) | Auto Scaling Disk Scalar: Capacity Enabled | `bool` | `null` | no |
+| <a name="input_disk_encryption_key"></a> [disk\_encryption\_key](#input\_disk\_encryption\_key) | The CRN of Key protect key | `string` | `null` | no |
+| <a name="input_disk_free_space_less_than_percent"></a> [disk\_free\_space\_less\_than\_percent](#input\_disk\_free\_space\_less\_than\_percent) | Auto Scaling Disk Scalar: Capacity Free Space Less Than Percent | `number` | `null` | no |
+| <a name="input_disk_io_above_percent"></a> [disk\_io\_above\_percent](#input\_disk\_io\_above\_percent) | Auto Scaling Disk Scalar: IO Utilization Above Percent | `number` | `null` | no |
+| <a name="input_disk_io_enabled"></a> [disk\_io\_enabled](#input\_disk\_io\_enabled) | Auto Scaling Disk Scalar: IO Utilization Enabled | `bool` | `null` | no |
+| <a name="input_disk_io_over_period"></a> [disk\_io\_over\_period](#input\_disk\_io\_over\_period) | Auto Scaling Disk Scalar: IO Utilization Over Period | `string` | `null` | no |
+| <a name="input_disk_rate_increase_percent"></a> [disk\_rate\_increase\_percent](#input\_disk\_rate\_increase\_percent) | Auto Scaling Disk Rate: Increase Percent | `number` | `null` | no |
+| <a name="input_disk_rate_limit_mb_per_member"></a> [disk\_rate\_limit\_mb\_per\_member](#input\_disk\_rate\_limit\_mb\_per\_member) | Auto Scaling Disk Rate: Limit mb per member | `number` | `null` | no |
+| <a name="input_disk_rate_period_seconds"></a> [disk\_rate\_period\_seconds](#input\_disk\_rate\_period\_seconds) | Auto Scaling Disk Rate: Period Seconds | `number` | `null` | no |
+| <a name="input_disk_rate_units"></a> [disk\_rate\_units](#input\_disk\_rate\_units) | Auto Scaling Disk Rate: Units | `string` | `null` | no |
+| <a name="input_kms_instance"></a> [kms\_instance](#input\_kms\_instance) | The CRN of Key protect instance | `string` | `null` | no |
+| <a name="input_location"></a> [location](#input\_location) | The location or the region in which Database instance exists | `string` | n/a | yes |
+| <a name="input_memory_allocation"></a> [memory\_allocation](#input\_memory\_allocation) | Memory allocation required for cluster | `number` | `null` | no |
+| <a name="input_memory_io_above_percent"></a> [memory\_io\_above\_percent](#input\_memory\_io\_above\_percent) | Auto Scaling Memory Scalar: IO Utilization Above Percent | `number` | `null` | no |
+| <a name="input_memory_io_enabled"></a> [memory\_io\_enabled](#input\_memory\_io\_enabled) | Auto Scaling Memory Scalar: IO Utilization Enabled | `bool` | `null` | no |
+| <a name="input_memory_io_over_period"></a> [memory\_io\_over\_period](#input\_memory\_io\_over\_period) | Auto Scaling Memory Scalar: IO Utilization Over Period | `string` | `null` | no |
+| <a name="input_memory_rate_increase_percent"></a> [memory\_rate\_increase\_percent](#input\_memory\_rate\_increase\_percent) | Auto Scaling Memory Rate: Increase Percent | `number` | `null` | no |
+| <a name="input_memory_rate_limit_mb_per_member"></a> [memory\_rate\_limit\_mb\_per\_member](#input\_memory\_rate\_limit\_mb\_per\_member) | Auto Scaling Memory Rate: Limit mb per member | `number` | `null` | no |
+| <a name="input_memory_rate_period_seconds"></a> [memory\_rate\_period\_seconds](#input\_memory\_rate\_period\_seconds) | Auto Scaling Memory Rate: Period Seconds | `number` | `null` | no |
+| <a name="input_memory_rate_units"></a> [memory\_rate\_units](#input\_memory\_rate\_units) | Auto Scaling Memory Rate: Units | `string` | `null` | no |
+| <a name="input_name"></a> [name](#input\_name) | Resource instance name for example, my Database instance | `string` | n/a | yes |
+| <a name="input_plan"></a> [plan](#input\_plan) | The plan type of the Database instance | `string` | n/a | yes |
+| <a name="input_point_in_time_recovery_deployment_id"></a> [point\_in\_time\_recovery\_deployment\_id](#input\_point\_in\_time\_recovery\_deployment\_id) | The CRN of source instance | `string` | `null` | no |
+| <a name="input_point_in_time_recovery_time"></a> [point\_in\_time\_recovery\_time](#input\_point\_in\_time\_recovery\_time) | The point in time recovery time stamp of the deployed instance | `string` | `null` | no |
+| <a name="input_remote_leader_id"></a> [remote\_leader\_id](#input\_remote\_leader\_id) | The CRN of leader database | `string` | `null` | no |
+| <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | Resource Group Name | `string` | n/a | yes |
+| <a name="input_service_endpoints"></a> [service\_endpoints](#input\_service\_endpoints) | Types of the service endpoints. Possible values are 'public', 'private', 'public-and-private'. | `string` | `null` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags for the database | `set(string)` | `null` | no |
+| <a name="input_users"></a> [users](#input\_users) | Database Users. It is set of username and passwords | `set(map(string))` | `null` | no |
+| <a name="input_whitelist"></a> [whitelist](#input\_whitelist) | Database Whitelist It is set of IP Address and description | `set(map(string))` | `null` | no |
 
-## Users Inputs
-| Name                                 | Description           | Type   | Default | Required |
-|--------------------------------------|-----------------------|--------|---------|----------|
-| name                                 | Name Of the User      | string | n/a     | no       |
-| password                             | User Password         | string | n/a     | no       |
+## Outputs
 
-## Whitelist Inputs
-
-| Name                                    | Description                           | Type   | Default | Required |
-|-----------------------------------------|---------------------------------------|--------|---------|----------|
-| address                                 | Whitelist IP address in CIDR notation | string | n/a     | no       |
-| description                             | Unique white list description         | string | n/a     | no       |
-
-
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
-### NOTE: To make use of a particular version of module, Set the `version` argument to respective module version.
-
-NOTE: We can configure the list of users, whitelist by entering respective details in input.tfvars.
 
 ## Usage
 
@@ -128,11 +151,12 @@ NOTE: We can configure the list of users, whitelist by entering respective detai
 terraform init
 ```
 ```
-terraform plan -var-file="input.tfvars"
+terraform plan
 ```
 ```
-terraform apply -var-file="input.tfvars"
+terraform apply
 ```
-## Note
 
-All optional fields are given value `null` in varaible.tf file. User can configure the same by overwriting with appropriate values.
+## NOTE
+
+* If the following attributes `database_version`,`memory_allocation`,`disk_allocation`,`cpu_allocation` are provided with null values, then API will create a database with the default values. These default values which are provided by API may differ and are not maintained by terraform.

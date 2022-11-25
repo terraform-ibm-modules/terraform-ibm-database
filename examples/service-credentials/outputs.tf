@@ -5,5 +5,5 @@
 
 output "key_id" {
   description = "The ID of the key"
-  value       = module.db-service-credentials.key_id
+  value       = module.db_service_credentials.key_id
 }

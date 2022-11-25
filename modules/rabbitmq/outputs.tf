@@ -3,5 +3,6 @@
 # Copyright 2020 IBM
 ###########################################################
 output "rabbitmq" {
-  value = ibm_database.rabbitmq
+  description = "simple rabbitmq"
+  value       = ibm_database.rabbitmq
 }
