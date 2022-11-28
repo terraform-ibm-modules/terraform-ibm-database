@@ -6,7 +6,7 @@
 data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
-module "database_simple-mongo" {
+module "database_simple_mongo" {
   source            = "../../modules/mongo"
   location          = var.location
   plan              = "standard"

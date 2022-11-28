@@ -6,7 +6,7 @@
 data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
-module "database_simple-etcd" {
+module "database_simple_etcd" {
   source            = "../../modules/etcd"
   location          = var.location
   plan              = "standard"

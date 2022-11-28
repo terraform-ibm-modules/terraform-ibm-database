@@ -3,7 +3,8 @@
 # Copyright 2020 IBM
 ###########################################################
 
-output "simple-redis" {
-  value     = module.database_simple-redis
-  sensitive = true
+output "simple_redis" {
+  description = "simple reids"
+  value       = module.database_simple_redis
+  sensitive   = true
 }

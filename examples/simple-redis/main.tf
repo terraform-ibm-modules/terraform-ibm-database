@@ -6,7 +6,7 @@
 data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
-module "database_simple-redis" {
+module "database_simple_redis" {
   source            = "../../modules/redis"
   location          = var.location
   plan              = "standard"

@@ -3,6 +3,7 @@
 # Copyright 2020 IBM
 ###########################################################
 output "postgresql" {
-  value     = ibm_database.postgresql
-  sensitive = true
+  description = "simple postgresql"
+  value       = ibm_database.postgresql
+  sensitive   = true
 }

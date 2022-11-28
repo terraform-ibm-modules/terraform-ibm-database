@@ -9,7 +9,7 @@ resource "ibm_database" "elasticsearch" {
   service                              = "databases-for-elasticsearch"
   plan                                 = var.plan
   location                             = var.location
-  adminpassword                        = (var.adminpassword != null ? var.adminpassword : null)
+  adminpassword                        = (var.adminpassword != null ? var.adminpassword : null) # pragma: allowlist secret
   version                              = (var.database_version != null ? var.database_version : null)
   members_memory_allocation_mb         = (var.memory_allocation != null ? var.memory_allocation : null)
   members_disk_allocation_mb           = (var.disk_allocation != null ? var.disk_allocation : null)

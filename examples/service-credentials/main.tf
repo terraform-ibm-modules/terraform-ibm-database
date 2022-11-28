@@ -11,7 +11,7 @@ data "ibm_resource_group" "resource_group" {
   name = var.resource_group != null ? var.resource_group : "default"
 }
 
-module "db-service-credentials" {
+module "db_service_credentials" {
   source            = "../../modules/service-credentials"
   db_name           = var.db_name
   location          = var.location

@@ -3,7 +3,7 @@
 # Copyright 2020 IBM
 ###########################################################
 
-output "simple-mongo" {
-  value     = module.database_simple-mongo
-  sensitive = true
+output "simple_mongo" {
+  description = "simple mongo"
+  value       = module.database_simple_mongo
 }

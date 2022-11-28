@@ -6,7 +6,7 @@
 data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
-module "database_simple-elasticsearch" {
+module "database_simple_elasticsearch" {
   source            = "../../modules/elasticsearch"
   location          = var.location
   plan              = "standard"
