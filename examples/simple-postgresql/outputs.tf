@@ -4,5 +4,6 @@
 ###########################################################
 
 output "simple-postgresql" {
-  value = module.database_simple-postgresql
+  value     = module.database_simple-postgresql
+  sensitive = true
 }

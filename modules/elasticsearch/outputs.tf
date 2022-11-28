@@ -3,5 +3,6 @@
 # Copyright 2020 IBM
 ###########################################################
 output "elasticsearch" {
-  value = ibm_database.elasticsearch
+  value     = ibm_database.elasticsearch
+  sensitive = true
 }

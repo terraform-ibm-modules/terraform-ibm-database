@@ -4,5 +4,6 @@
 ###########################################################
 
 output "simple-redis" {
-  value = module.database_simple-redis
+  value     = module.database_simple-redis
+  sensitive = true
 }

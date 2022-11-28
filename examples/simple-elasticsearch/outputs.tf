@@ -4,5 +4,6 @@
 ###########################################################
 
 output "simple-elasticsearch" {
-  value = module.database_simple-elasticsearch
+  value     = module.database_simple-elasticsearch
+  sensitive = true
 }

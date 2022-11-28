@@ -3,5 +3,6 @@
 # Copyright 2020 IBM
 ###########################################################
 output "etcd" {
-  value = ibm_database.etcd
+  value     = ibm_database.etcd
+  sensitive = true
 }
