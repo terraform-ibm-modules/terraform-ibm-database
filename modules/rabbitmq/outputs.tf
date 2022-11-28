@@ -3,5 +3,6 @@
 # Copyright 2020 IBM
 ###########################################################
 output "rabbitmq" {
-  value = ibm_database.rabbitmq
+  value     = ibm_database.rabbitmq
+  sensitive = true
 }
