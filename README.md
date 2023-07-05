@@ -1,5 +1,27 @@
 # IBM Database Terraform Module
 
+## Module deprecated
+
+:spider_web: This repo is no longer maintained. Use one of the following public modules if you consume the module from GitHub: 
+- [terraform-ibm-icd-mongodb](https://github.com/terraform-ibm-modules/terraform-ibm-icd-mongodb)
+- [terraform-ibm-icd-postgresql](https://github.com/terraform-ibm-modules/terraform-ibm-icd-postgresql)
+- [terraform-ibm-icd-redis](https://github.com/terraform-ibm-modules/terraform-ibm-icd-redis)
+- terraform-ibm-icd-elasticsearch (coming soon)
+- terraform-ibm-icd-etcd (coming soon)
+- terraform-ibm-icd-rabbitmq (coming soon)
+
+## Changes if you use the Hashicorp registry
+
+:exclamation: **Important:**  This module will be deleted from the Hashicorp registry as soon as there are replacement modules for all of the databases supported by this module 
+
+If you consume the module from the Hashicorp registry, use one of the following instead:
+- [icd-mongodb](https://registry.terraform.io/modules/terraform-ibm-modules/icd-mongodb/ibm/latest)
+- [icd-postgresql](https://registry.terraform.io/modules/terraform-ibm-modules/icd-postgresql/ibm/latest)
+
+(more coming soon)
+
+---
+
 This is a collection of modules that make it easier to provision database on IBM Cloud Platform:
 * database_elasticsearch
 * database_etcd
