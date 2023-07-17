@@ -5,20 +5,24 @@
 :spider_web: This repo is no longer maintained. Use one of the following public modules if you consume the module from GitHub: 
 - [terraform-ibm-icd-mongodb](https://github.com/terraform-ibm-modules/terraform-ibm-icd-mongodb)
 - [terraform-ibm-icd-postgresql](https://github.com/terraform-ibm-modules/terraform-ibm-icd-postgresql)
+- [terraform-ibm-icd-edb](https://github.com/terraform-ibm-modules/terraform-ibm-icd-edb)
 - [terraform-ibm-icd-redis](https://github.com/terraform-ibm-modules/terraform-ibm-icd-redis)
-- terraform-ibm-icd-elasticsearch (coming soon)
-- terraform-ibm-icd-etcd (coming soon)
-- terraform-ibm-icd-rabbitmq (coming soon)
+- [terraform-ibm-icd-elasticsearch](https://github.com/terraform-ibm-modules/terraform-ibm-icd-elasticsearch)
+- [terraform-ibm-icd-etcd](https://github.com/terraform-ibm-modules/terraform-ibm-icd-etcd)
+- [terraform-ibm-icd-rabbitmq](https://github.com/terraform-ibm-modules/terraform-ibm-icd-rabbitmq)
 
 ## Changes if you use the Hashicorp registry
 
-:exclamation: **Important:**  This module will be deleted from the Hashicorp registry as soon as there are replacement modules for all of the databases supported by this module 
+:exclamation: **Important:**  This module will be deleted from the Hashicorp registry on 1 August 2023. 
 
 If you consume the module from the Hashicorp registry, use one of the following instead:
 - [icd-mongodb](https://registry.terraform.io/modules/terraform-ibm-modules/icd-mongodb/ibm/latest)
 - [icd-postgresql](https://registry.terraform.io/modules/terraform-ibm-modules/icd-postgresql/ibm/latest)
-
-(more coming soon)
+- [icd-edb](https://registry.terraform.io/modules/terraform-ibm-modules/icd-edb/ibm/latest)
+- [icd-redis](https://registry.terraform.io/modules/terraform-ibm-modules/icd-redis/ibm/latest)
+- [icd-elasticsearch](https://registry.terraform.io/modules/terraform-ibm-modules/icd-elasticsearch/ibm/latest)
+- [icd-etcd](https://registry.terraform.io/modules/terraform-ibm-modules/icd-etcd/ibm/latest)
+- [icd-rabbitmq](https://registry.terraform.io/modules/terraform-ibm-modules/icd-rabbitmq/ibm/latest)
 
 ---
 
