@@ -3,7 +3,7 @@
 # Copyright 2020 IBM
 ###########################################################
 
-output "simple-elasticsearch" {
-  value     = module.database_simple-elasticsearch
-  sensitive = true
+output "simple_elasticsearch" {
+  description = "simple elastic search"
+  value       = module.database_simple_elasticsearch
 }

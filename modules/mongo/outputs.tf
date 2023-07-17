@@ -3,6 +3,7 @@
 # Copyright 2020 IBM
 ###########################################################
 output "mongodb" {
-  value     = ibm_database.mongodb
-  sensitive = true
+  description = "simple mongodb"
+  value       = ibm_database.mongodb
+  sensitive   = true
 }

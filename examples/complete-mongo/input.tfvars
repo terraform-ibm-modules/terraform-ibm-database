@@ -4,8 +4,7 @@
 ###########################################################
 
 users = [{
-  name     = "user123"
-  password = "password12"
+  name = "user123"
 }]
 whitelist = [{
   address     = "172.168.1.1/32"

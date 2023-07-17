@@ -3,7 +3,7 @@
 # Copyright 2020 IBM
 ###########################################################
 
-output "simple-postgresql" {
-  value     = module.database_simple-postgresql
-  sensitive = true
+output "simple_postgresql" {
+  description = "simple postgresql"
+  value       = module.database_simple_postgresql
 }

@@ -55,7 +55,7 @@ module "database_rabbitmq" {
   name                                 = var.name
   plan                                 = var.plan
   location                             = var.location
-  adminpassword                        = var.adminpassword
+  adminpassword                        = var.adminpassword # pragma: allowlist secret
   database_version                     = var.database_version
   memory_allocation                    = var.memory_allocation
   disk_allocation                      = var.disk_allocation
@@ -95,57 +95,26 @@ module "database_rabbitmq" {
 
 
 ```
-#### NOTE: To make use of a particular version of module, Set the `version` argument to respective module version.
+#### NOTE:
 
-## Requirements
+To make use of a particular version of module, Set the `version` argument to respective module version.
 
-### Terraform plugins
+## Modules
 
-- [Terraform](https://www.terraform.io/downloads.html) >= 0.13
-- [terraform-provider-ibm](https://github.com/IBM-Cloud/terraform-provider-ibm)
+No modules.
 
-## Install
+## Resources
 
-### Terraform
+No resources.
 
-Be sure you have the correct Terraform version (>= 0.13), you can choose the binary here:
-- https://releases.hashicorp.com/terraform/
+## Inputs
 
-### Terraform plugins
+No inputs.
 
-Be sure you have the compiled plugins on $HOME/.terraform.d/plugins/
+## Outputs
 
-- [terraform-provider-ibm](https://github.com/IBM-Cloud/terraform-provider-ibm)
+No outputs.
 
-## How to input varaible values through a file
-
-To review the plan for the configuration defined (no resources actually provisioned)
-
-`terraform plan -var-file=./input.tfvars`
-
-To execute and start building the configuration defined in the plan (provisions resources)
-
-`terraform apply -var-file=./input.tfvars`
-
-To destroy the Database resources
-
-`terraform destroy -var-file=./input.tfvars`
-
-All optional parameters by default will be set to null in respective example's varaible.tf file. If user wants to configure any optional paramter he has overwrite the default value.
-
-## Note
-
-All optional fields should be given value `null` in respective resource varaible.tf file. User can configure the same by overwriting with appropriate values.
-
-### Pre-commit Hooks
-
-Run the following command to execute the pre-commit hooks defined in `.pre-commit-config.yaml` file
-
-  `pre-commit run -a`
-
-We can install pre-coomit tool using
-
-  `pip install pre-commit`
 ## References
 
 [IBM-Cloud Elastic Search Database docs](https://cloud.ibm.com/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-getting-started)
@@ -159,3 +128,9 @@ We can install pre-coomit tool using
 [IBM-Cloud Messages for Rabbitmq Database docs](https://cloud.ibm.com/docs/messages-for-rabbitmq?topic=messages-for-rabbitmq-getting-started)
 
 [IBM-Cloud Redis Database docs](https://cloud.ibm.com/docs/databases-for-redis?topic=databases-for-redis-getting-started)
+
+## Contributing
+
+You can report issues and request features for this module in the [terraform-ibm-issue-tracker](https://github.com/terraform-ibm-modules/terraform-ibm-issue-tracker/issues) repo. See [Report an issue or request a feature](https://github.com/terraform-ibm-modules/.github/blob/main/.github/SUPPORT.md).
+
+To set up your local development environment, see [Local development setup](https://terraform-ibm-modules.github.io/documentation/#/local-dev-setup) in the project documentation.

@@ -6,7 +6,7 @@
 data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
-module "database_monngo" {
+module "database_mongo" {
   source                               = "../../modules/mongo"
   resource_group_id                    = data.ibm_resource_group.resource_group.id
   service_name                         = var.name
